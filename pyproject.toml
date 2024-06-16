@@ -1,0 +1,22 @@
+[project]
+name = "python-aid"
+version = "0.1.2"
+description = "python-aidはMisskeyのaid/aidxのPython向けの実装です。"
+authors = [
+    {name = "AmaseCocoa", email = "amase.cocoa@gmail.com"},
+]
+dependencies = [
+]
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "MIT"}
+[project.urls]
+Repository = "https://github.com/AmaseCocoa/python-aid.git"
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
