@@ -17,7 +17,7 @@ print("aid: " + generated)
 print("time: " + aid.parseAid(generated).strftime('%Y-%m-%d %H:%M:%S.%f'))
 ```
 #### With timestamp
-```
+```python
 from python_aid import aid
 
 generated = aid.genAid(timestamp=1718546963) # 1718546963 = 2024/06/16 23:09:23 (JST)
@@ -35,7 +35,7 @@ print("aidx: " + generated)
 print("time: " + aidx.parseAidx(generated).strftime('%Y-%m-%d %H:%M:%S.%f'))
 ```
 #### With timestamp
-```
+```python
 from python_aid import aidx
 
 generated = aidx.genAidx(timestamp=1718546963) # 1718546963 = 2024/06/16 23:09:23 (JST)
