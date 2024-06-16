@@ -22,14 +22,15 @@ def parseAid(aidx: str) -> datetime.datetime:
         return datetime.datetime.utcfromtimestamp(timestamp)
     return datetime.datetime.fromtimestamp(timestamp, datetime.UTC)
 
-def genAid() -> str:
+def genAid(timestamp: int=None) -> str:
     """aidを生成します。
 
     Returns:
         str: aid
     """
-    current = int((time.time() - 946684800) * 1000)
-    base36_time = base36.b36encode(current)
+    if timestamp is None:
+        timestamp = int((time.time() - 946684800) * 1000)
+    base36_time = base36.b36encode(timestamp)
     noise = get_noise()
     aid = base36_time.zfill(8) + noise.zfill(2)
     return aid
