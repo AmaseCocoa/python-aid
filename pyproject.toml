@@ -1,6 +1,6 @@
 [project]
 name = "python-aid"
-version = "0.1.2"
+version = "0.1.3"
 description = "python-aidはMisskeyのaid/aidxのPython向けの実装です。"
 authors = [
     {name = "AmaseCocoa", email = "amase.cocoa@gmail.com"},

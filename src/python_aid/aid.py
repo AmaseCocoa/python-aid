@@ -10,7 +10,6 @@ def get_noise() -> str:
     return format(counter, 'x').zfill(2)[-2:]
 
 def parseAid(aidx: str) -> datetime.datetime:
-    version = sys.version_info
     """aidを生成します。
 
     Returns:
@@ -19,7 +18,7 @@ def parseAid(aidx: str) -> datetime.datetime:
     base36_time = aidx[:8]
     time_milliseconds = int(base36.b36decode(base36_time))
     timestamp = 946684800 + time_milliseconds / 1000
-    if int(f"{version.major}{version.minor}") < 311: # Python3.11からdatetimee.UTCが追加されたため
+    if sys.version_info < (3, 11): # Python3.11からdatetimee.UTCが追加されたため
         return datetime.datetime.utcfromtimestamp(timestamp)
     return datetime.datetime.fromtimestamp(timestamp, datetime.UTC)
 
