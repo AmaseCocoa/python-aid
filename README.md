@@ -8,7 +8,7 @@ Misskeyで利用されているID生成アルゴリズムです。
 
 ## Example
 ### aid
-```
+```python
 from python_aid import aid
 
 generated = aid.genAid()
@@ -17,7 +17,7 @@ print("aid: " + generated)
 print("time: " + aid.parseAid(generated).strftime('%Y-%m-%d %H:%M:%S.%f'))
 ```
 ### aidx
-```
+```python
 from python_aid import aidx
 
 generated = aidx.genAidx()
