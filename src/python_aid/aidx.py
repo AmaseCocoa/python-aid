@@ -12,7 +12,7 @@ def genAidx(timestamp: float=None) -> str:
     Returns:
         str: aidx
     """
-    if timestamp:
+    if timestamp is None:
         timestamp = int((time.time() - 946684800) * 1000)
         # raise NotImplementedError("The function to generate aidx from timestamp is currently not available due to incompatibility with Misskey's aidx :(")
     else:
