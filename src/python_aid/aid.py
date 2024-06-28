@@ -30,9 +30,10 @@ def genAid(timestamp: float=None) -> str:
         str: aid
     """
     if timestamp is None:
-        timestamp = int((timestamp - 946684800) * 1000)
+        timestamp = int((time.time() - 946684800) * 1000)
         # raise NotImplementedError("The function to generate aid from timestamp is currently not available due to incompatibility with Misskey's aid :(")
-    timestamp = int((time.time() - 946684800) * 1000)
+    else:
+        timestamp = int((timestamp - 946684800) * 1000)
     base36_time = base36.encode(timestamp)
     noise = getNoise()
     aid = base36_time.zfill(8) + noise.zfill(2)
